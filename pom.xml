@@ -127,6 +127,27 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-bom</artifactId>
+                <version>${kotlin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-serialization-bom</artifactId>
+                <version>${kotlin.serialization.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-coroutines-bom</artifactId>
+                <version>${kotlin.coroutines.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
                 <groupId>com.lightbend.lagom</groupId>
                 <artifactId>lagom-bom</artifactId>
                 <version>${lagom.version}</version>
@@ -155,11 +176,14 @@
                 <type>pom</type>
             </dependency>
             <dependency>
-                <groupId>org.jetbrains.kotlin</groupId>
-                <artifactId>kotlin-bom</artifactId>
-                <version>${kotlin.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>org.jetbrains.kotlinx</groupId>
+                <artifactId>kotlinx-datetime-jvm</artifactId>
+                <version>${kotlin.datetime.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.taymyr.lagom</groupId>
+                <artifactId>lagom-extensions-java_${scala.binary.version}</artifactId>
+                <version>${lagom.extensions.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -178,6 +202,11 @@
         <akka.version>2.6.18</akka.version>
 
         <jna.version>5.8.0</jna.version>
+
+        <lagom.extensions.version>0.20.0</lagom.extensions.version>
+        <kotlin.serialization.version>1.5.1</kotlin.serialization.version>
+        <kotlin.coroutines.version>1.6.4</kotlin.coroutines.version>
+        <kotlin.datetime.version>0.4.0</kotlin.datetime.version>
 
         <!-- Lagom settings -->
         <lagom.version>1.6.7</lagom.version>
