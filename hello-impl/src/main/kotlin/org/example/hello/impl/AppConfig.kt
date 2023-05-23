@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalSerializationApi::class)
-
 package org.example.hello.impl
 
 import com.typesafe.config.ConfigMemorySize
@@ -21,6 +19,7 @@ import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter.ISO_DATE_TIME
 import kotlin.time.Duration
 
+@OptIn(ExperimentalSerializationApi::class)
 @Serializable
 data class AppConfig(
     val intValue: Int,
@@ -36,6 +35,7 @@ data class AppConfig(
     val javaZonedDateTime: ZonedDateTime
 )
 
+@OptIn(ExperimentalSerializationApi::class)
 object ZonedDateTimeConfigSerializer : KSerializer<ZonedDateTime> {
 
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("hocon.ZonedDateTime", PrimitiveKind.STRING)
